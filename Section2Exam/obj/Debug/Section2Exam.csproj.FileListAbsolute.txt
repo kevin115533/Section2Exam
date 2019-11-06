@@ -1,0 +1,9 @@
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\bin\Debug\Section2Exam.exe.config
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\bin\Debug\Section2Exam.exe
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\bin\Debug\Section2Exam.pdb
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\obj\Debug\Section2Exam.csprojAssemblyReference.cache
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\obj\Debug\Section2Exam.frmConverter.resources
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\obj\Debug\Section2Exam.Properties.Resources.resources
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\obj\Debug\Section2Exam.csproj.GenerateResource.cache
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\obj\Debug\Section2Exam.exe
+C:\Users\Kevin Tran\source\repos\Section2Exam\Section2Exam\obj\Debug\Section2Exam.pdb
