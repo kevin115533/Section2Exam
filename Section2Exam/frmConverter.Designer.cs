@@ -47,34 +47,31 @@
             // 
             this.txtConvertFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConvertFrom.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConvertFrom.ForeColor = System.Drawing.Color.Silver;
-            this.txtConvertFrom.Location = new System.Drawing.Point(379, 0);
+            this.txtConvertFrom.ForeColor = System.Drawing.Color.Black;
+            this.txtConvertFrom.Location = new System.Drawing.Point(214, 0);
             this.txtConvertFrom.Name = "txtConvertFrom";
-            this.txtConvertFrom.Size = new System.Drawing.Size(383, 26);
+            this.txtConvertFrom.Size = new System.Drawing.Size(548, 26);
             this.txtConvertFrom.TabIndex = 0;
-            this.txtConvertFrom.Text = "Example: 1991";
             // 
             // txtBase
             // 
             this.txtBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBase.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBase.ForeColor = System.Drawing.Color.Silver;
-            this.txtBase.Location = new System.Drawing.Point(379, 25);
+            this.txtBase.ForeColor = System.Drawing.Color.Black;
+            this.txtBase.Location = new System.Drawing.Point(214, 25);
             this.txtBase.Name = "txtBase";
-            this.txtBase.Size = new System.Drawing.Size(383, 26);
+            this.txtBase.Size = new System.Drawing.Size(548, 26);
             this.txtBase.TabIndex = 1;
-            this.txtBase.Text = "Example: 10";
             // 
             // lblMessage
             // 
             this.lblMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblMessage.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessage.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblMessage.Location = new System.Drawing.Point(-1, 52);
+            this.lblMessage.Location = new System.Drawing.Point(-1, 53);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(763, 65);
             this.lblMessage.TabIndex = 2;
-            this.lblMessage.Text = "label1";
             this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClear
@@ -87,6 +84,7 @@
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnExit
             // 
@@ -110,6 +108,7 @@
             this.btnConvertTo.TabIndex = 5;
             this.btnConvertTo.Text = "Convert To";
             this.btnConvertTo.UseVisualStyleBackColor = false;
+            this.btnConvertTo.Click += new System.EventHandler(this.btnConvertTo_Click);
             // 
             // btnBinary
             // 
@@ -171,7 +170,7 @@
             // 
             this.lblNumber.AutoSize = true;
             this.lblNumber.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumber.Location = new System.Drawing.Point(168, 2);
+            this.lblNumber.Location = new System.Drawing.Point(3, 2);
             this.lblNumber.Name = "lblNumber";
             this.lblNumber.Size = new System.Drawing.Size(192, 18);
             this.lblNumber.TabIndex = 11;
@@ -181,7 +180,7 @@
             // 
             this.lblBase.AutoSize = true;
             this.lblBase.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBase.Location = new System.Drawing.Point(168, 27);
+            this.lblBase.Location = new System.Drawing.Point(3, 27);
             this.lblBase.Name = "lblBase";
             this.lblBase.Size = new System.Drawing.Size(202, 18);
             this.lblBase.TabIndex = 12;
@@ -205,8 +204,10 @@
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.txtBase);
             this.Controls.Add(this.txtConvertFrom);
+            this.KeyPreview = true;
             this.Name = "frmConverter";
             this.Text = "Converter";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConverter_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
