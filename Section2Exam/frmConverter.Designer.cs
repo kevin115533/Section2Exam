@@ -132,6 +132,7 @@
             this.btnHex.TabIndex = 7;
             this.btnHex.Text = "Hex";
             this.btnHex.UseVisualStyleBackColor = false;
+            this.btnHex.Click += new System.EventHandler(this.btnHex_Click);
             // 
             // btnOctal
             // 
@@ -143,6 +144,7 @@
             this.btnOctal.TabIndex = 8;
             this.btnOctal.Text = "Octal";
             this.btnOctal.UseVisualStyleBackColor = false;
+            this.btnOctal.Click += new System.EventHandler(this.btnOctal_Click);
             // 
             // btnBase5
             // 
@@ -154,6 +156,7 @@
             this.btnBase5.TabIndex = 9;
             this.btnBase5.Text = "Base 5";
             this.btnBase5.UseVisualStyleBackColor = false;
+            this.btnBase5.Click += new System.EventHandler(this.btnBase5_Click);
             // 
             // btnBase7
             // 
@@ -165,6 +168,7 @@
             this.btnBase7.TabIndex = 10;
             this.btnBase7.Text = "Base 7";
             this.btnBase7.UseVisualStyleBackColor = false;
+            this.btnBase7.Click += new System.EventHandler(this.btnBase7_Click);
             // 
             // lblNumber
             // 
@@ -206,6 +210,7 @@
             this.Controls.Add(this.txtConvertFrom);
             this.KeyPreview = true;
             this.Name = "frmConverter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Converter";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConverter_KeyDown);
             this.ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+/* Kevin Tran
+ * ITD 1253
+ * 11/7/2019
+ */
 
 namespace Section2Exam
 {
@@ -19,9 +24,12 @@ namespace Section2Exam
 
         private void btnBinary_Click(object sender, EventArgs e)
         {
-
+            if (validateData(txtConvertFrom))
+            {
+                int x = int.Parse(txtConvertFrom.Text);
+                lblMessage.Text = conversion(x, 2);
+            }
         }
-
         public bool validateData(TextBox textbox)
         {
             return
@@ -29,7 +37,6 @@ namespace Section2Exam
                 isDecimal(textbox) &&
                 isInt32(textbox);
         }
-
         public bool isBlank(TextBox textBox)
         {
             if (textBox.Text == "")
@@ -42,7 +49,6 @@ namespace Section2Exam
                 return true;
             }
         }
-
         public bool isInt32(TextBox textbox)
         {
             string string1 = textbox.Text;
@@ -71,12 +77,10 @@ namespace Section2Exam
                 return false;
             }
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void frmConverter_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Escape)
@@ -84,19 +88,111 @@ namespace Section2Exam
                 this.Close();
             }
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtBase.Text = "";
             txtConvertFrom.Text = "";
             lblMessage.Text = "Entry values cleared";
         }
-
         private void btnConvertTo_Click(object sender, EventArgs e)
         {
-            if(validateData(txtConvertFrom) && validateData(txtBase))
+            if (validateData(txtConvertFrom) && validateData(txtBase))
             {
-                lblMessage.Text = txtConvertFrom.Text + txtBase.Text;
+                int x = int.Parse(txtConvertFrom.Text);
+                lblMessage.Text =  txtBase.Text + "x" + conversion(x, int.Parse(txtBase.Text));
+            }
+        }
+
+        private string conversion(int userNumber, int baseNumber)
+        {
+            string convertedNumber = "";
+            while (userNumber > 0)
+            {
+                string holder = "";
+                if(userNumber % baseNumber < 10)
+                {
+                    convertedNumber = convertedNumber + Convert.ToString(userNumber % baseNumber);
+                }
+                else
+                {
+                    convertedNumber = convertedNumber + Convert.ToString(baseLetter(userNumber % baseNumber));
+                }
+                userNumber = userNumber / baseNumber;
+            }
+
+            char[] original = convertedNumber.ToCharArray();
+            char[] result = new char[original.Length];
+            for (int i = 0, j = convertedNumber.Length - 1; i < convertedNumber.Length; i++, j--)
+            {
+                result[i] = original[j];
+            }
+            convertedNumber = string.Join("", result);
+            return convertedNumber;
+        }
+
+        private void btnHex_Click(object sender, EventArgs e)
+        {
+            if (validateData(txtConvertFrom))
+            {
+                int x = int.Parse(txtConvertFrom.Text);
+                lblMessage.Text = "0x" + conversion(x, 16);
+            }
+        }
+
+        private string baseLetter(int x)
+        {
+            int number = x;
+            string letter = "";
+            switch (number)
+            {
+                case 10:
+                    letter = "A";
+                    break;
+                case 11:
+                    letter = "B";
+                    break;
+                case 12:
+                    letter = "C";
+                    break;
+                case 13:
+                    letter = "D";
+                    break;
+                case 14:
+                    letter = "E";
+                    break;
+                case 15:
+                    letter = "F";
+                    break;
+                default:
+                    break;
+            }
+            return letter;
+        }
+
+        private void btnOctal_Click(object sender, EventArgs e)
+        {
+            if (validateData(txtConvertFrom))
+            {
+                int x = int.Parse(txtConvertFrom.Text);
+                lblMessage.Text = "8x" + conversion(x, 8);
+            }
+        }
+
+        private void btnBase5_Click(object sender, EventArgs e)
+        {
+            if (validateData(txtConvertFrom))
+            {
+                int x = int.Parse(txtConvertFrom.Text);
+                lblMessage.Text = "5x" + conversion(x, 5);
+            }
+        }
+
+        private void btnBase7_Click(object sender, EventArgs e)
+        {
+            if (validateData(txtConvertFrom))
+            {
+                int x = int.Parse(txtConvertFrom.Text);
+                lblMessage.Text = "7x" + conversion(x, 7);
             }
         }
     }
